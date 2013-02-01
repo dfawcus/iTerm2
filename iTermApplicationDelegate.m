@@ -877,15 +877,15 @@ static BOOL hasBecomeActive = NO;
               keyEquivalent:@""];
     [aMenu addItem:[NSMenuItem separatorItem]];
     [self _newSessionMenu:aMenu
-                    title:@"New Window…"
-                   target:[iTermController sharedInstance]
-                 selector:@selector(newSessionInWindowAtIndex:)
-          openAllSelector:@selector(newSessionsInNewWindow:)];
-    [self _newSessionMenu:aMenu
-                    title:@"New Tab…"
+                    title:@"New Tab"
                    target:frontTerminal
                  selector:@selector(newSessionInTabAtIndex:)
           openAllSelector:@selector(newSessionsInWindow:)];
+    [self _newSessionMenu:aMenu
+                    title:@"New Window"
+                   target:[iTermController sharedInstance]
+                 selector:@selector(newSessionInWindowAtIndex:)
+          openAllSelector:@selector(newSessionsInNewWindow:)];
     [self _addArrangementsMenuTo:aMenu];
 
     return ([aMenu autorelease]);
