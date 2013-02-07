@@ -2630,14 +2630,14 @@ NSString *sessionsKey = @"sessions";
     }
 
     // Bookmarks
-    [theMenu insertItemWithTitle:NSLocalizedStringFromTableInBundle(@"New Window",
+    [theMenu insertItemWithTitle:NSLocalizedStringFromTableInBundle(@"New Tab",
                                                                     @"iTerm",
                                                                     [NSBundle bundleForClass:[self class]],
                                                                     @"Context menu")
                           action:nil
                    keyEquivalent:@""
                          atIndex:nextIndex++];
-    [theMenu insertItemWithTitle:NSLocalizedStringFromTableInBundle(@"New Tab",
+    [theMenu insertItemWithTitle:NSLocalizedStringFromTableInBundle(@"New Window",
                                                                     @"iTerm",
                                                                     [NSBundle bundleForClass:[self class]],
                                                                     @"Context menu")
@@ -2685,7 +2685,7 @@ NSString *sessionsKey = @"sessions";
                                          openAllSelector:@selector(newSessionsInNewWindow:)
                                               startingAt:0];
 
-    [theMenu setSubmenu:aMenu forItem:[theMenu itemAtIndex:0]];
+    [theMenu setSubmenu:aMenu forItem:[theMenu itemAtIndex:1]];
 
     aMenu = [[[NSMenu alloc] init] autorelease];
     [[iTermController sharedInstance] addBookmarksToMenu:aMenu
@@ -2693,7 +2693,7 @@ NSString *sessionsKey = @"sessions";
                                          openAllSelector:@selector(newSessionsInWindow:)
                                               startingAt:0];
 
-    [theMenu setSubmenu:aMenu forItem:[theMenu itemAtIndex:1]];
+    [theMenu setSubmenu:aMenu forItem:[theMenu itemAtIndex:0]];
 }
 
 // NSTabView
